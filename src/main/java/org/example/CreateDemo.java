@@ -15,7 +15,9 @@ public class CreateDemo
     {
         System.out.println( "App Started!" );
 
-        Student student = new Student(1, "Saurabh", 22);
+        Student student1 = new Student(3, "Gaurav", 20);
+        Student student2 = new Student(4, "Kishan", 21);
+        Student student3 = new Student(5, "Aditya", 17);
 
         // creating EntityManagerFactory which is similar to Hibernate's SessionFactory
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("JPA_DEMO");
@@ -26,7 +28,10 @@ public class CreateDemo
 
         // starting the transaction
         transaction.begin();
-        entityManager.persist(student);
+        entityManager.persist(student1);
+        entityManager.persist(student2);
+        entityManager.persist(student3);
+
 
         transaction.commit();
         entityManager.close();
